@@ -11,16 +11,21 @@ public class CarPartInfo : MonoBehaviour
     public string partName;
     [TextArea] public string description;
 
+    [Header("Optional")]
+    public GameObject floatingIcon;
+
     public void ShowInfo()
     {
         infoPanel.SetActive(true);
         partNameText.text = partName;
         descriptionText.text = description;
+
+        if (floatingIcon != null)
+            floatingIcon.SetActive(false);
     }
 
     public void HideInfo()
     {
         infoPanel.SetActive(false);
     }
-
 }
