@@ -22,6 +22,7 @@ public class CarPartInfo : MonoBehaviour
 
         if (floatingIcon != null)
             floatingIcon.SetActive(false);
+        FindObjectOfType<ProgressTracker>().AddProgress();
     }
 
     public void HideInfo()
