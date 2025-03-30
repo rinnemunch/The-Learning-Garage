@@ -16,8 +16,14 @@ public class CarPartInfo : MonoBehaviour
     [Header("Optional")]
     public GameObject floatingIcon;
 
+    private bool hasBeenInspected = false;
+
     public void ShowInfo()
     {
+        if (hasBeenInspected) return;
+
+        hasBeenInspected = true;
+
         StartCoroutine(FadeInPanel());
         partNameText.text = partName;
         descriptionText.text = description;
