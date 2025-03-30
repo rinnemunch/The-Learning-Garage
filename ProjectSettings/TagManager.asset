@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Ground
+  - Inspectable
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,26 @@
+using UnityEngine;
+using TMPro;
+
+public class CarPartInfo : MonoBehaviour
+{
+    public GameObject infoPanel;
+    public TextMeshProUGUI partNameText;
+    public TextMeshProUGUI descriptionText;
+
+    [Header("Part Info")]
+    public string partName;
+    [TextArea] public string description;
+
+    public void ShowInfo()
+    {
+        infoPanel.SetActive(true);
+        partNameText.text = partName;
+        descriptionText.text = description;
+    }
+
+    public void HideInfo()
+    {
+        infoPanel.SetActive(false);
+    }
+
+}
