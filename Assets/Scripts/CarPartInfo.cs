@@ -6,6 +6,7 @@ public class CarPartInfo : MonoBehaviour
     public GameObject infoPanel;
     public TextMeshProUGUI partNameText;
     public TextMeshProUGUI descriptionText;
+    public AudioClip inspectSound;
 
     [Header("Part Info")]
     public string partName;
@@ -23,6 +24,7 @@ public class CarPartInfo : MonoBehaviour
         if (floatingIcon != null)
             floatingIcon.SetActive(false);
         FindObjectOfType<ProgressTracker>().AddProgress();
+        AudioSource.PlayClipAtPoint(inspectSound, transform.position);
     }
 
     public void HideInfo()
