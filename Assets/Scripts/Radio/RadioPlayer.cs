@@ -28,13 +28,40 @@ public class RadioPlayer : MonoBehaviour
     {
         if (unlocked[index])
         {
+            if (audioSource.isPlaying)
+                audioSource.Stop(); 
+
             audioSource.clip = songs[index];
             audioSource.Play();
         }
         else
         {
-            Debug.Log("Track is locked!");
+            Debug.Log("Track " + index + " is locked.");
         }
     }
+
+
+    public void TryUnlockAndPlay(int index)
+    {
+        if (unlocked[index])
+        {
+            PlayTrack(index); // Already unlocked
+        }
+        else
+        {
+            GearPointManager gpManager = FindObjectOfType<GearPointManager>();
+            if (gpManager != null && gpManager.SpendPoints(25))
+            {
+                unlocked[index] = true;
+                PlayTrack(index); // Unlock and play
+                Debug.Log("Track " + index + " unlocked and playing.");
+            }
+            else
+            {
+                Debug.Log("Not enough Gear Points to unlock Track " + index);
+            }
+        }
+    }
+
 
 }

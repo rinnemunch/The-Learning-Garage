@@ -32,8 +32,10 @@ public class CarPartInfo : MonoBehaviour
             floatingIcon.SetActive(false);
 
         FindObjectOfType<ProgressTracker>().AddProgress();
+        FindObjectOfType<GearPointManager>().AddPoints(25); 
         AudioSource.PlayClipAtPoint(inspectSound, transform.position);
     }
+
 
     public void HideInfo()
     {
