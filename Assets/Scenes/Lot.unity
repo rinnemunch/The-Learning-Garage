@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b463ee278ba6143419943ce77d8ea486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Garage Scene
+  sceneToLoad: GarageScene
 --- !u!65 &1378215936
 BoxCollider:
   m_ObjectHideFlags: 0
